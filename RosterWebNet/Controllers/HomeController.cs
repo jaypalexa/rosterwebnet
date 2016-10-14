@@ -10,7 +10,7 @@ namespace RosterWebNet.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "RosterWebNet - Home";
 
             return View();
         }
