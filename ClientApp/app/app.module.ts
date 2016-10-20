@@ -4,17 +4,25 @@ import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
+import { SeaTurtlesComponent } from './components/seaturtles/seaturtles.component';
+import { HoldingTanksComponent } from './components/holdingtanks/holdingtanks.component';
+import { HatchlingsComponent } from './components/hatchlings/hatchlings.component';
+import { WashbacksComponent } from './components/washbacks/washbacks.component';
 
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
         NavMenuComponent,
+        HomeComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        SeaTurtlesComponent,
+        HoldingTanksComponent,
+        HatchlingsComponent,
+        WashbacksComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
@@ -23,6 +31,10 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'sea-turtles', component: SeaTurtlesComponent },
+            { path: 'holding-tanks', component: HoldingTanksComponent },
+            { path: 'hatchlings', component: HatchlingsComponent },
+            { path: 'washbacks', component: WashbacksComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
