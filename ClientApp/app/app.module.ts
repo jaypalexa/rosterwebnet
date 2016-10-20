@@ -10,6 +10,7 @@ import { SeaTurtlesComponent } from './components/seaturtles/seaturtles.componen
 import { HoldingTanksComponent } from './components/holdingtanks/holdingtanks.component';
 import { HatchlingsComponent } from './components/hatchlings/hatchlings.component';
 import { WashbacksComponent } from './components/washbacks/washbacks.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -22,7 +23,8 @@ import { WashbacksComponent } from './components/washbacks/washbacks.component';
         SeaTurtlesComponent,
         HoldingTanksComponent,
         HatchlingsComponent,
-        WashbacksComponent
+        WashbacksComponent, 
+        UsersComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
@@ -35,6 +37,7 @@ import { WashbacksComponent } from './components/washbacks/washbacks.component';
             { path: 'holding-tanks', component: HoldingTanksComponent },
             { path: 'hatchlings', component: HatchlingsComponent },
             { path: 'washbacks', component: WashbacksComponent },
+            { path: 'users', component: UsersComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
