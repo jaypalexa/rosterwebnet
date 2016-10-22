@@ -413,3 +413,14 @@ INSERT INTO [county] (county_id, county_name) VALUES ('2540c545-c2a1-42fc-858a-e
 INSERT INTO [county] (county_id, county_name) VALUES ('2be0412c-0d8c-4564-847b-326ec7fc70f0', 'Wakulla');
 INSERT INTO [county] (county_id, county_name) VALUES ('2c298fdc-83c0-44a3-862e-236887f61ab3', 'Walton');
 INSERT INTO [county] (county_id, county_name) VALUES ('31ab2879-884b-4c07-ab4b-bb4ea0e24624', 'Washington');
+
+
+INSERT INTO organization (organization_id, organization_name, address_1, city, state, zip_code) 
+VALUES (NEWID(), 'Organization 1', '111 Main Street', 'Orlando', 'FL', '32801');
+
+INSERT INTO organization (organization_id, organization_name, address_1, city, state, zip_code) 
+VALUES (NEWID(), 'Organization 2', '222 Main Street', 'Savannah', 'GA', '31414');
+
+
+
+

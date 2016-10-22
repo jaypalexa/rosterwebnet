@@ -21,6 +21,8 @@ namespace rosterwebnet
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            Configuration.GetConnectionString("defaultConnection");
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -30,6 +32,9 @@ namespace rosterwebnet
         {
             // Add framework services.
             services.AddMvc();
+
+            // Make the configuration available in your app globally through Dependency Injection 
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

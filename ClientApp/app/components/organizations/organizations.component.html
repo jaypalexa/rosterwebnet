@@ -1,0 +1,20 @@
+<h1>Organizations</h1>
+
+<p *ngIf="!organizationListItems"><em>Loading...</em></p>
+
+<table class='table table-bordered table-striped' *ngIf="organizationListItems">
+    <thead>
+        <tr>
+            <th>Organization Name</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let organizationListItem of organizationListItems">
+            <td>{{ organizationListItem.organizationName }}</td>
+            <td>{{ organizationListItem.city }}</td>
+            <td>{{ organizationListItem.state }}</td>
+        </tr>
+    </tbody>
+</table>
