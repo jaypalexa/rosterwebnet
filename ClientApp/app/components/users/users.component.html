@@ -1,22 +1,11 @@
 <h1>Users</h1>
 
-<p *ngIf="!userListItems"><em>Loading...</em></p>
+<p *ngIf="!_tableHelper.data"><em>Loading...</em></p>
 
-<table class='table' *ngIf="userListItems">
-    <thead>
-        <tr>
-            <th>User Name</th>
-            <th>E-mail</th>
-            <th>Organization</th>
-            <th>Is Admin?</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let userListItem of userListItems">
-            <td>{{ userListItem.userName }}</td>
-            <td>{{ userListItem.userEmail }}</td>
-            <td>{{ userListItem.organizationName }}</td>
-            <td>{{ userListItem.isAdmin }}</td>
-        </tr>
-    </tbody>
-</table>
+<ng-table *ngIf="_tableHelper.data"
+          [config]="_tableHelper.config"
+          [rows]="_tableHelper.rows"
+          [columns]="_tableHelper.columns"
+          (tableChanged)="_tableHelper.onChangeTable(_tableHelper.config)"
+          (cellClicked)="_tableHelper.onCellClick($event)">
+</ng-table>

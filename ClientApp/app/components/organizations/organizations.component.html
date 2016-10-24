@@ -1,30 +1,12 @@
 <h1>Organizations</h1>
 
-<p *ngIf="!data"><em>Loading...</em></p>
+<p *ngIf="!_tableHelper.data"><em>Loading...</em></p>
 
-<!--<table class='table table-bordered table-striped' *ngIf="data">
-    <thead>
-        <tr>
-            <th>Organization Name</th>
-            <th>City</th>
-            <th>State</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of data">
-            <td>{{ item.organizationName }}</td>
-            <td>{{ item.city }}</td>
-            <td>{{ item.state }}</td>
-        </tr>
-    </tbody>
-</table>-->
-
-<!--<br />-->
-
-<ng-table *ngIf="data"
-          [config]="config"
-          (tableChanged)="onChangeTable(config)"
-          (cellClicked)="onCellClick($event)"
-          [rows]="rows" [columns]="columns">
+<ng-table *ngIf="_tableHelper.data"
+          [config]="_tableHelper.config"
+          [rows]="_tableHelper.rows"
+          [columns]="_tableHelper.columns"
+          (tableChanged)="_tableHelper.onChangeTable(_tableHelper.config)"
+          (cellClicked)="_tableHelper.onCellClick($event)">
 </ng-table>
 
