@@ -1,8 +1,8 @@
 <h1>Organizations</h1>
 
-<p *ngIf="!organizationListItems"><em>Loading...</em></p>
+<p *ngIf="!data"><em>Loading...</em></p>
 
-<table class='table table-bordered table-striped' *ngIf="organizationListItems">
+<!--<table class='table table-bordered table-striped' *ngIf="data">
     <thead>
         <tr>
             <th>Organization Name</th>
@@ -11,10 +11,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let organizationListItem of organizationListItems">
-            <td>{{ organizationListItem.organizationName }}</td>
-            <td>{{ organizationListItem.city }}</td>
-            <td>{{ organizationListItem.state }}</td>
+        <tr *ngFor="let item of data">
+            <td>{{ item.organizationName }}</td>
+            <td>{{ item.city }}</td>
+            <td>{{ item.state }}</td>
         </tr>
     </tbody>
-</table>
+</table>-->
+
+<!--<br />-->
+
+<ng-table *ngIf="data"
+          [config]="config"
+          (tableChanged)="onChangeTable(config)"
+          (cellClicked)="onCellClick($event)"
+          [rows]="rows" [columns]="columns">
+</ng-table>
+

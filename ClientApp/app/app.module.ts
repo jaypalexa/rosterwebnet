@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UniversalModule } from 'angular2-universal';
-//import { DataTableModule } from 'angular2-datatable';  //$ npm i -S angular2-datatable
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,8 +13,6 @@ import { HatchlingsComponent } from './components/hatchlings/hatchlings.componen
 import { WashbacksComponent } from './components/washbacks/washbacks.component';
 import { OrganizationsComponent } from './components/organizations/organizations.component';
 import { UsersComponent } from './components/users/users.component';
-//import { DataTableDirectives } from 'angular2-datatable/datatable';
-//import * as _ from "lodash";  //$ npm install --save @types/lodash
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -33,7 +31,7 @@ import { UsersComponent } from './components/users/users.component';
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
-        //DataTableModule, 
+        Ng2TableModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
